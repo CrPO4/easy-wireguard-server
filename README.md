@@ -34,7 +34,7 @@ After setup you will be prompted to add a new peer.
 ## Step 3: adding a new client
 ```
 Done! Now you need to add a few peers.
-Would you like to do it now [y/n]?
+Would you like to do it now [y/N]?
 ```
 In case of a negative answer, the reminder will appear:
 ```
