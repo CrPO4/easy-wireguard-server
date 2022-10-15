@@ -31,6 +31,10 @@ Enter your desired server private IP address, leave blank for default [10.18.0.1
 After setup you will be prompted to add a new peer. 
 
 ## Alternative step 2: setting up WireGuard server from backup (option 2)
+Place your backup into the folder script is in.
+It should have a name that matches the pattern: easy-wireguard-server*
+Notice: there should only be ONE backup at a time.
+The script will unpack and move all files as necessary, after restart your WireGuard server should be setup.
 
 ## Step 3: adding a new client (option 3)
 ```
