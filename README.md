@@ -17,7 +17,7 @@ Choose the action:
 [4] Remove WireGuard server from this system
 ```
 
-## Step 2: setting up WireGuard server
+## Step 2: setting up WireGuard server (option 1)
 When prompted, enter the following:
 1. WireGuard server port;
 2. SSH server port;
@@ -29,9 +29,9 @@ Enter your desired server private IP address, leave blank for default [10.18.0.1
 ```
 After setup you will be prompted to add a new peer. 
 
-## Alternative step 2: setting up WireGuard server from backup
+## Alternative step 2: setting up WireGuard server from backup (option 2)
 
-## Step 3: adding a new client
+## Step 3: adding a new client (option 3)
 ```
 Done! Now you need to add a few peers.
 Would you like to do it now [y/N]?
@@ -47,7 +47,7 @@ Enter device name:
 Is QR-code suitable for output [y/N]?
 ```
 
-## Step 99: removing Wireguard server from the system
+## Step 99: removing Wireguard server from the system (option 4)
 
 ```
 This script will remove WireGuard server from this machine.
