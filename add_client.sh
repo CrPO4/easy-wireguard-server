@@ -8,7 +8,7 @@ NC='\033[0m'
 ### if config can be outputted as QR-code
 echo -en "${GREEN}Enter device name: ${NC}"
 read DEVICE_NAME
-echo -en "${GREEN}Is QR-code suitable for output? [y/n]${NC}"
+echo -en "${GREEN}Is QR-code suitable for output [y/N]? ${NC}"
 read IS_QRCODE
 
 ### Create client keys
@@ -22,6 +22,8 @@ line=$(grep -i "ListenPort" /etc//wireguard/wg0.conf)
 IFS='= '; port=($line); unset IFS; IP_PORT="$IP_ADR:${port[1]}"
 DEVICE_PUBLIC=$(</etc/wireguard/clients/$DEVICE_NAME.key.pub)
 DEVICE_PRIVATE=$(</etc/wireguard/clients/$DEVICE_NAME.key)
+line=$( grep "Address" /etc/wireguard/wg0.conf | cut -d ' ' -f3 )
+IFS='.'; SERVER_PRIVATE_IP_OCTETS=($line); unset IFS;
 line=$( tail -n 1 /etc/wireguard/wg0.conf )
 IFS='.'; last_ips=($line); unset IFS;
 last_ip=${last_ips[3]}; NEXT_IP=$((last_ip+=2))
@@ -34,7 +36,7 @@ Server - $IP_PORT; Next allowed IP - x.x.x.$NEXT_IP"
 touch /etc/wireguard/clients/$DEVICE_NAME.conf
 echo "[Interface]
 PrivateKey = $DEVICE_PRIVATE
-Address = 10.18.0.$NEXT_IP
+Address = $SERVER_PRIVATE_IP_OCTETS[0].$SERVER_PRIVATE_IP_OCTETS[1].$SERVER_PRIVATE_IP_OCTETS[2].$NEXT_IP
 DNS = 8.8.8.8, 1.1.1.1, 208.67.222.222, 94.140.14.14, 76.76.19.19, 9.9.9.9
 
 [Peer]
@@ -47,7 +49,7 @@ echo "
 [Peer]
 ### $DEVICE_NAME
 PublicKey = $DEVICE_PUBLIC
-AllowedIPs = 10.18.0.$NEXT_IP" >> /etc/wireguard/wg0.conf
+AllowedIPs = $SERVER_PRIVATE_IP_OCTETS[0].$SERVER_PRIVATE_IP_OCTETS[1].$SERVER_PRIVATE_IP_OCTETS[2].$NEXT_IP" >> /etc/wireguard/wg0.conf
 
 ### Restart WireGuard server
 wg-quick down wg0
