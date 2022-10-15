@@ -19,7 +19,7 @@ if ! [ -f "setup_server_from_backup.sh" ]; then
 	chmod +x setup_server_from_backup.sh
 fi
 if ! [ -f "create_backup.sh" ]; then
-    curl -O https://raw.githubusercontent.com/CrPO4/easy-wireguard-server/main/create_backup.sh
+    curl -O https://raw.githubusercontent.com/crpo4/easy-wireguard-server/main/create_backup.sh
 	chmod +x create_backup.sh
 fi
 if ! [ -f "add_client.sh" ]; then
@@ -49,7 +49,7 @@ elif [ $OPTION == "2" ]; then
 elif [ $OPTION == "3" ]; then
 	./easy_wireguard/add_client.sh
 elif [ $OPTION == "4" ]; then
-	./easy_wireguard/server_backup.sh
+	./easy_wireguard/create_backup.sh
 elif [ $OPTION == "5" ]; then
 	./easy_wireguard/remove_server.sh
 	rm -r ./easy_wireguard
