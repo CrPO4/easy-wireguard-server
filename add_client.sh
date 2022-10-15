@@ -24,6 +24,9 @@ DEVICE_PUBLIC=$(</etc/wireguard/clients/$DEVICE_NAME.key.pub)
 DEVICE_PRIVATE=$(</etc/wireguard/clients/$DEVICE_NAME.key)
 line=$( grep "Address" /etc/wireguard/wg0.conf | cut -d ' ' -f3 )
 IFS='.'; SERVER_PRIVATE_IP_OCTETS=($line); unset IFS;
+SERVER_PRIVATE_IP_FIRSTOCTET=SERVER_PRIVATE_IP_OCTETS[0]
+SERVER_PRIVATE_IP_SECONDOCTET=SERVER_PRIVATE_IP_OCTETS[1]
+SERVER_PRIVATE_IP_THIRDOCTET=SERVER_PRIVATE_IP_OCTETS[2]
 line=$( tail -n 1 /etc/wireguard/wg0.conf )
 IFS='.'; last_ips=($line); unset IFS;
 last_ip=${last_ips[3]}; NEXT_IP=$((last_ip+=2))
@@ -36,7 +39,7 @@ Server - $IP_PORT; Next allowed IP - x.x.x.$NEXT_IP"
 touch /etc/wireguard/clients/$DEVICE_NAME.conf
 echo "[Interface]
 PrivateKey = $DEVICE_PRIVATE
-Address = $SERVER_PRIVATE_IP_OCTETS[0].$SERVER_PRIVATE_IP_OCTETS[1].$SERVER_PRIVATE_IP_OCTETS[2].$NEXT_IP
+Address = $SERVER_PRIVATE_IP_FIRSTOCTET.$SERVER_PRIVATE_IP_SECONDOCTET.$SERVER_PRIVATE_IP_THIRDOCTET.$NEXT_IP
 DNS = 1.1.1.1, 8.8.8.8
 
 [Peer]
