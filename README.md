@@ -55,12 +55,17 @@ Enter device name:
 Is QR-code suitable for output [y/N]?
 ```
 
-## Step 4: creating a backup
+## Step 4: creating a backup (option 5)
 No input required, the backup will be created in the current working folder under the name that follows the scheme:
 easy-wireguard-server-YEAR-MONTH-DAY-HOSTNAME-backup.tar.gz
 Cherish it.
 
-## Step 99: removing Wireguard server from the system (option 5)
+## Step 88: showing QR of already created peer configuration (option 4)
+You will be prompted to enter configuration/device name exactly as you did before.
+
+After that in case of success QR will be shown.
+
+## Step 99: removing Wireguard server from the system (option 6)
 
 ```
 This script will remove WireGuard server from this machine.
