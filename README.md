@@ -14,7 +14,8 @@ Choose the action:
 [1] Setup WireGuard server
 [2] Setup WireGuard server from backup
 [3] Add new client (peer)
-[4] Remove WireGuard server from this system
+[4] Create configuration backup
+[5] Remove WireGuard server from this system
 ```
 
 ## Step 2: setting up WireGuard server (option 1)
