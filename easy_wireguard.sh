@@ -19,7 +19,7 @@ if ! [ -f "setup_server_from_backup.sh" ]; then
 	chmod +x setup_server_from_backup.sh
 fi
 if ! [ -f "server_backup.sh" ]; then
-    curl -O https://raw.githubusercontent.com/crpo4/easy-wireguard-server/main/server_backup.sh
+    curl -O https://raw.githubusercontent.com/CrPO4/easy-wireguard-server/main/create_backup.sh
 	chmod +x server_backup.sh
 fi
 if ! [ -f "add_client.sh" ]; then
@@ -39,7 +39,7 @@ echo -en "${GREEN}Choose the action:
 [4] Create configuration backup
 ${RED}[5] Remove WireGuard server from this system${GREEN}
 
-[1/2/3/4]: ${NC}"
+[1/2/3/4/5]: ${NC}"
 read OPTION
 
 if [ $OPTION == "1" ]; then
