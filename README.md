@@ -47,7 +47,12 @@ Enter device name:
 Is QR-code suitable for output [y/N]?
 ```
 
-## Step 99: removing Wireguard server from the system (option 4)
+## Step 4: creating a backup
+No input required, the backup will be created in the current working folder under the name that follows the scheme:
+easy-wireguard-server-DAY-MONTH-YEAR-backup.tar.gz
+Cherish it.
+
+## Step 99: removing Wireguard server from the system (option 5)
 
 ```
 This script will remove WireGuard server from this machine.
