@@ -63,7 +63,7 @@ systemctl start wg-quick@wg0.service
 systemctl status --no-pager -l wg-quick@wg0.service
 
 echo -en "${PURPLE}Done! Now you need to add a few peers.
-Would you like to do it now [y/n]? "
+Would you like to do it now [y/N]? "
 read NEED_CLIENT
 if [ $NEED_CLIENT == "y" || $NEED_CLIENT == "" ];
 then
