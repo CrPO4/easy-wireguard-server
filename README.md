@@ -5,7 +5,7 @@ Guaranteed to work on Ubuntu 20.04.
 ## Step 1: getting the script
 Download and run script with:
 ```
-curl -O https://raw.githubusercontent.com/CrPO4/easy-wireguard-server/main/setup_server.sh && chmod +x easy_wireguard.sh && ./easy_wireguard.sh
+curl -O https://raw.githubusercontent.com/CrPO4/easy-wireguard-server/main/easy_wireguard.sh && chmod +x easy_wireguard.sh && ./easy_wireguard.sh
 ```
 
 You will be prompted to pick the action
