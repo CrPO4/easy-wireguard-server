@@ -53,7 +53,7 @@ echo "
 [Peer]
 ### $DEVICE_NAME
 PublicKey = $DEVICE_PUBLIC
-AllowedIPs = $SERVER_PRIVATE_IP_OCTETS[0].$SERVER_PRIVATE_IP_OCTETS[1].$SERVER_PRIVATE_IP_OCTETS[2].$NEXT_IP" >> /etc/wireguard/wg0.conf
+AllowedIPs = $SERVER_PRIVATE_IP_FIRSTOCTET.$SERVER_PRIVATE_IP_SECONDOCTET.$SERVER_PRIVATE_IP_THIRDOCTET.$NEXT_IP" >> /etc/wireguard/wg0.conf
 
 ### Restart WireGuard server
 wg-quick down wg0
