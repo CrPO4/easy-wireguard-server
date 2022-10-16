@@ -14,9 +14,9 @@ if ! [ -f "setup_server.sh" ]; then
     curl -O https://raw.githubusercontent.com/crpo4/easy-wireguard-server/main/setup_server.sh
 	chmod +x setup_server.sh
 fi
-if ! [ -f "setup_server_from_backup.sh" ]; then
-    curl -O https://raw.githubusercontent.com/crpo4/easy-wireguard-server/main/setup_server_from_backup.sh
-	chmod +x setup_server_from_backup.sh
+if ! [ -f "restore_backup.sh.sh" ]; then
+    curl -O https://raw.githubusercontent.com/crpo4/easy-wireguard-server/main/restore_backup.sh.sh
+	chmod +x restore_backup.sh.sh
 fi
 if ! [ -f "add_client.sh" ]; then
     curl -O https://raw.githubusercontent.com/crpo4/easy-wireguard-server/main/add_client.sh
@@ -38,7 +38,7 @@ cd ..
 
 echo -en "${GREEN}Choose the action:
 [1] Setup WireGuard server
-[2] Setup WireGuard server from backup
+[2] Restore configuration backup
 [3] Add new client (peer)
 [4] Show client (peer) QR
 [5] Create configuration backup
@@ -50,7 +50,7 @@ read OPTION
 if [ $OPTION == "1" ]; then
 	./easy_wireguard/setup_server.sh
 elif [ $OPTION == "2" ]; then
-	./easy_wireguard/setup_server_from_backup.sh
+	./easy_wireguard/restore_backup.sh
 elif [ $OPTION == "3" ]; then
 	./easy_wireguard/add_client.sh
 elif [ $OPTION == "4" ]; then
