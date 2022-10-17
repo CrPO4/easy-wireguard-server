@@ -14,8 +14,9 @@ Choose the action:
 [1] Setup WireGuard server
 [2] Restore configuration backup
 [3] Add new client (peer)
-[4] Create configuration backup
-[5] Remove WireGuard server from this system
+[4] Show client (peer) QR
+[5] Create configuration backup
+[6] Remove WireGuard server from this system
 ```
 
 ## Step 2: setting up WireGuard server (option 1)
