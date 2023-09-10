@@ -8,9 +8,9 @@ NC='\033[0m'
 ### if config can be outputted as QR-code
 echo -en "${GREEN}Choose port for VPN, 1-65535, leave blank for random: ${NC}"
 read input_VPN_PORT
-if [ $input_VPN_PORT == "" ];
+if [ "$input_VPN_PORT" == "" ];
 then
-	PORT=$[ $RANDOM * 2 ]
+	PORT=$[ "$RANDOM" * 2 ]
 else
 	PORT=$input_VPN_PORT
 fi
@@ -18,11 +18,11 @@ echo -en "${GREEN}Enter your SSH port: ${NC}"
 read SSH_PORT
 echo -en "${GREEN}Enter your desired server private IP address, leave blank for default [10.18.0.1]: ${NC}"
 read input_SERVER_PRIVATE_IP
-if [ $input_SERVER_PRIVATE_IP == "" ];
+if [ "$input_SERVER_PRIVATE_IP" == "" ];
 then
 	SERVER_PRIVATE_IP="10.18.0.1"
 else
-	PORT=$input_SERVER_PRIVATE_IP
+	SERVER_PRIVATE_IP=$input_SERVER_PRIVATE_IP
 fi
 
 ### Install WireGuard and Firewall
@@ -53,8 +53,8 @@ PreDown = iptables -t nat -D POSTROUTING -o $NETWORK_DEVICE -j MASQUERADE" > /et
 echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 
 sysctl -p
-ufw allow $PORT/udp
-ufw allow $SSH_PORT/tcp
+ufw allow "$PORT"/udp
+ufw allow "$SSH_PORT"/tcp
 ufw disable
 ufw --force enable
 ufw status
