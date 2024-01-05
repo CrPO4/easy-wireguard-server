@@ -14,9 +14,9 @@ if ! [ -f "setup_server.sh" ]; then
     curl -O https://raw.githubusercontent.com/crpo4/easy-wireguard-server/main/setup_server.sh
 	chmod +x setup_server.sh
 fi
-if ! [ -f "restore_backup.sh.sh" ]; then
+if ! [ -f "restore_backup.sh" ]; then
     curl -O https://raw.githubusercontent.com/crpo4/easy-wireguard-server/main/restore_backup.sh
-	chmod +x restore_backup.sh.sh
+	chmod +x restore_backup.sh
 fi
 if ! [ -f "add_client.sh" ]; then
     curl -O https://raw.githubusercontent.com/crpo4/easy-wireguard-server/main/add_client.sh
