@@ -27,7 +27,7 @@ fi
 
 ### Install WireGuard and Firewall
 apt update
-apt --yes install wireguard
+#apt --yes install wireguard
 apt --yes install ufw
 mkdir /etc/wireguard
 
